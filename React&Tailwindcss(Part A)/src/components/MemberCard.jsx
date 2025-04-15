@@ -1,13 +1,3 @@
-/**
- * MemberCard Component
- * 
- * Displays individual team member information including:
- * - Profile photo
- * - Name and job title
- * - Department
- * - Social media links
- * - Hover animations
- */
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
