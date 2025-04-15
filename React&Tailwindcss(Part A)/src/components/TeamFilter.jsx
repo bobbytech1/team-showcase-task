@@ -1,20 +1,11 @@
-/**
- * TeamFilter Component
- * 
- * Provides department filtering functionality for the team showcase with:
- * - Department selection dropdown
- * - Visual indicator of active filter
- * - Loading states during filter application
- * - Responsive layout
- */
 import { useState } from 'react';
 import { FiFilter, FiCheck } from 'react-icons/fi';
 
 const TeamFilter = ({ 
-  departments,        // Array of available departments for filtering
-  onApplyFilter,      // Callback function when filter is applied
-  selectedDepartment, // Currently active department filter
-  isLoading           // Loading state from parent component
+  departments,       
+  onApplyFilter,     
+  selectedDepartment, 
+  isLoading           
 }) => {
   // Local state for the selected department before applying
   const [localDepartment, setLocalDepartment] = useState(selectedDepartment);
@@ -60,8 +51,8 @@ const TeamFilter = ({
         disabled={isLoading}
         className={`px-4 py-2 rounded-md h-[42px] flex items-center gap-2 transition-colors ${
           isLoading 
-            ? 'bg-blue-400 cursor-not-allowed'  // Disabled state styling
-            : 'bg-blue-600 hover:bg-blue-700 text-white'  // Active state styling
+            ? 'bg-blue-400 cursor-not-allowed' 
+            : 'bg-blue-600 hover:bg-blue-700 text-white'  
         }`}
         aria-label="Apply department filter"
       >
