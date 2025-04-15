@@ -19,6 +19,7 @@ A responsive, animated team showcase built using:
 - Paginated layout (if multiple members)
 
 Open `React&Tailwindcss(Part A)/` to view the component and run locally.
+Live Link: https://team-showcase-task.vercel.app/
 
 ---
 
@@ -56,6 +57,7 @@ A semantic, accessible, and responsive version of the component built with **HTM
 - Includes a 12-card responsive grid
 
 Open `HTML-CSS/index.html` in your browser to view.
+Live Link: https://team-showcase-task-htmlcss.vercel.app/
 
 ---
 
