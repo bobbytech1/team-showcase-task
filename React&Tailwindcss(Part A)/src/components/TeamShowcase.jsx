@@ -1,12 +1,3 @@
-/**
- * TeamShowcase Component
- * 
- * Displays a paginated and filterable list of team members with:
- * - Department filtering functionality
- * - Pagination controls
- * - Loading states
- * - Responsive grid layout
- */
 import { useState, useEffect } from 'react';
 import MemberCard from './MemberCard';
 import TeamFilter from './TeamFilter';
@@ -14,17 +5,16 @@ import ReactPaginate from 'react-paginate';
 
 export const TeamShowcase = () => {
   // State management for team data and UI states
-  const [team, setTeam] = useState([]);          // Stores the complete team data
-  const [loading, setLoading] = useState(true);  // Initial data loading state
-  const [filterLoading, setFilterLoading] = useState(false); // Filter loading state
-  const [departmentFilter, setDepartmentFilter] = useState('All Departments'); // Active filter
-  const [currentPage, setCurrentPage] = useState(0);        // Current page index (0-based)
-  const membersPerPage = 6;                      // Number of members to display per page
+  const [team, setTeam] = useState([]);          
+  const [loading, setLoading] = useState(true);  
+  const [filterLoading, setFilterLoading] = useState(false); 
+  const [departmentFilter, setDepartmentFilter] = useState('All Departments'); 
+  const [currentPage, setCurrentPage] = useState(0);
+  const membersPerPage = 6; 
 
-  /**
-   * Fetches team data from API on component mount
-   * Handles loading states and error scenarios
-   */
+  
+   //Fetches team data from API on component mount
+
   useEffect(() => {
     const fetchTeamData = async () => {
       try {
@@ -45,10 +35,9 @@ export const TeamShowcase = () => {
   // Extract unique department values from team data (excluding undefined/null)
   const departments = [...new Set(team.map(member => member?.department).filter(Boolean))];
 
-  /**
-   * Filters team members based on selected department
-   * Returns all members if 'All Departments' is selected
-   */
+
+   //Filters team members based on selected department
+   
   const filteredTeam = departmentFilter === 'All Departments' 
     ? team 
     : team.filter(member => member?.department === departmentFilter);
@@ -60,13 +49,12 @@ export const TeamShowcase = () => {
     (currentPage + 1) * membersPerPage
   );
 
-  /**
-   * Handles department filter changes
-   * @param {string} department - Selected department value
-   */
+  
+   //Handles department filter changes
+   
   const handleApplyFilter = (department) => {
     setFilterLoading(true);
-    setCurrentPage(0); // Reset to first page when filters change
+    setCurrentPage(0);
     
     // Simulate API delay (remove in production)
     setTimeout(() => {
@@ -75,10 +63,9 @@ export const TeamShowcase = () => {
     }, 500);
   };
 
-  /**
-   * Handles pagination page changes
-   * @param {Object} selected - Object containing selected page index
-   */
+ 
+   //Handles pagination page changes
+  
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected);
   };
